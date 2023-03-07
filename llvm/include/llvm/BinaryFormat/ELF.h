@@ -320,6 +320,7 @@ enum {
   EM_VE = 251,            // NEC SX-Aurora VE
   EM_CSKY = 252,          // C-SKY 32-bit processor
   EM_LOONGARCH = 258,     // LoongArch
+  EM_COGENT = 259,        // COGENT RISC-V Processor
 };
 
 // Object file classes.
@@ -663,6 +664,20 @@ enum {
 // ELF Relocation type for Lanai.
 enum {
 #include "ELFRelocs/Lanai.def"
+};
+
+// Cogent RISC-V Specific e_flags
+enum : unsigned {
+  EF_COGENT_RVC = 0x0001,
+  EF_COGENT_RVE = 0x0008,
+  EF_COGENT_TSO = 0x0010,
+  EF_COGENT_NABI = 0x0020,
+  EF_COGENT_COGENT = 0x0030,
+};
+
+// ELF Relocation types for RISC-V
+enum {
+#include "ELFRelocs/Cogent.def"
 };
 
 // RISCV Specific e_flags

@@ -105,6 +105,7 @@ public:
     wasm64,         // WebAssembly with 64-bit pointers
     renderscript32, // 32-bit RenderScript
     renderscript64, // 64-bit RenderScript
+    cogent,	    // 32-bit RISC-V Cogent Processor
     ve,             // NEC SX-Aurora Vector Engine
     LastArchType = ve
   };
@@ -907,6 +908,9 @@ public:
 
   /// Tests whether the target is RISC-V (32- and 64-bit).
   bool isRISCV() const { return isRISCV32() || isRISCV64(); }
+
+  /// Tests whether the target is 32-bit RISC-V Cogent.
+  bool isCOGENT() const { return getArch() == Triple::cogent; }
 
   /// Tests whether the target is 32-bit SPARC (little and big endian).
   bool isSPARC32() const {
